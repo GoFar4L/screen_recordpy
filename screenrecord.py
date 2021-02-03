@@ -4,12 +4,7 @@ import pyautogui
 import sys
 import keyboard
 import time
-def seewhat():
-    i = 0
-    while(i != 3):
-        print(f'passed {i}')
-        time.sleep(1)
-        i = i + 1
+
 
 def exit():
     if keyboard.is_pressed('s'):
@@ -18,14 +13,15 @@ def exit():
             return True
     else:
         return False
+        
 def pause():
     if keyboard.is_pressed('p'):
         if keyboard.is_pressed('o'):
-            seewhat()
             print('Paused')
             return True
     else:
         return False
+
 def stop_pause():
     if keyboard.is_pressed('p'):
         if keyboard.is_pressed('a'):
@@ -38,8 +34,8 @@ def stop_pause():
 fps = 30.0
 
 screensize = (1920, 1080)
-four_char_code = cv.VideoWriter_fourcc(*"DIVX")
-writer = cv.VideoWriter("record.avi", four_char_code, fps, (screensize))
+four_char_code = cv.VideoWriter_fourcc(*"mp4v")
+writer = cv.VideoWriter("record.mp4", four_char_code, fps, (screensize))
 
 while True:
     img = pyautogui.screenshot()
