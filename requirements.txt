@@ -1,4 +1,4 @@
-pyautogui
-keyboard
 opencv-python
 numpy
+keyboard
+pyautogui
